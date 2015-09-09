@@ -12,15 +12,15 @@ class String
       sentence_array.first.capitalize!
 
       #  Manage special words
-      if (word.include?("mc"))
-        letter_array = word.split!("")    # word with mc changed to an array of letters
-          if (letter_array[0] == "m") && (letter_array[1] == "c")  # 1st & 2nd letters
-            letter_array[2].capitalize!
-            word = letter_array.join
+          if (word.start_with?("Mc")) || (word.start_with?("O'"))
+            # condensed from: word[0, 1] == "Mc"
+            # condensed from: (word[0] == "M") && (word[1] == "c")
+            word[2] = word[2].upcase
           end
-      end
     end
     sentence_array.join(" ")
   end
 
 end
+
+# there is no split! method
