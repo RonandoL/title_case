@@ -8,6 +8,6 @@ get('/') do
 end
 
 get('/title') do
-  @title = params.fetch('title').title_case()  # will receive the input parameters from the 'title' field. We'll want that string to be title cased and then displayed on a fresh page.
+  @title = params.fetch('title').title_case()  # will receive the input parameters from the 'title' field. The input string will then be title cased and then displayed on the new page.
   erb(:title)
 end
